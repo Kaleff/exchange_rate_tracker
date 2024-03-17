@@ -12,6 +12,7 @@ Route::resources([
     /**
      * GET api/rates -> index();
      * POST api/rates -> store($request);
+     * GET api/rates/{currency} -> show($currency)
      */
     'rates' => CurrencyRateController::class
 ]);
