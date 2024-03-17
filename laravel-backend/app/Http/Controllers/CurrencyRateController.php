@@ -51,8 +51,6 @@ class CurrencyRateController extends Controller
         $response = curl_exec($curl);
         curl_close($curl);
         $jsonResponse = json_decode($response ,true);
-        print_r($jsonResponse);
-
         // Check if base currency is Euro and request was successful
         if ($jsonResponse['base'] != "EUR" || !$jsonResponse['success'] || count($jsonResponse['rates']) == 0) {
             return response()->json([
@@ -60,13 +58,16 @@ class CurrencyRateController extends Controller
                 'errors' => ['Invalid request'],
             ], 406);
         }
+        // Store new Rates
         foreach($jsonResponse['rates'] as $currency => $rate) {
             CurrencyRate::create([
                 'currency' => $currency,
                 'exchange_rate' => $rate
             ]);
         }
-        return 'The rates were updated successfully';
+        // Display the message in the terminal about the successful update
+        echo 'The exchange rates were updated successfully';
+        return 'The exchange rates were updated successfully';
     }
     /**
      * Route GET api/rates/{currency}
