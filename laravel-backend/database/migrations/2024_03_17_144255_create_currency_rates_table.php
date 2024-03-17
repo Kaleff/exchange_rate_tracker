@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('exchange_rates', function (Blueprint $table) {
+        Schema::create('currency_rates', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->enum('currency', config('currency.all_currencies'));
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('exchange_rates');
+        Schema::dropIfExists('currency_rates');
     }
 };
