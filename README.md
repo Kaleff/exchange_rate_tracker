@@ -9,24 +9,25 @@ This is the project that allows to track exchange rates among EUR and USD, AUD, 
 > In case you are using Windows WSL2, make sure to mount this project repository in WSL2 and run from there.
 
 1) Copy the env.example contents and create the .env file and configure it, the token will be provided via e-mail.
-2) Make sure that apache is not running to avoid possible conflicts
+2) Copy the API Token included in the e-mail to the ```OUTER_API_TOKEN=``` line in the .env file 
+3) Make sure that apache is not running to avoid possible conflicts
 
 ```
 sudo /etc/init.d/apache2 stop
 ```
 
-3) Run the application using SAIL, make sure the docker engine is running
+4) Run the application using SAIL, make sure the docker engine is running
 
 ```
 cd laravel-backend && ./vendor/bin/sail up
 ```
 
-4) Run the migrations
+5) Run the migrations
 ```
 ./vendor/bin/sail artisan migrate:fresh
 ```
 
-5) Populate the exchange rates table either
+6) Populate the exchange rates table either
 Manually, by running the command
 ```
 ./vendor/bin/sail updaterates
