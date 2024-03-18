@@ -11,4 +11,8 @@ export type Rate = {
   exchange_rate: number;
 }
 
+export type PaginationEvent = {
+  selected: number;
+}
+
 export type Currency = string;

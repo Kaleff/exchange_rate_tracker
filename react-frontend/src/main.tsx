@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "rates/:currency(USD|AUD|GBP)",
+        path: "rates/:currency",
         element: <Rates />
       }
     ]
