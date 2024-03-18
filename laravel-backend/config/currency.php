@@ -2,9 +2,6 @@
 
 return [
   'all_currencies' => ['GBP', 'USD', 'AUD'],
-  /*'api_sample' => [
-    "AUD" => 1.65273,
-    "GBP" => 0.854456,
-    "USD" => 1.083364,
-  ] */
+  'API_URL' => env('OUTER_API'),
+  'API_TOKEN' => env('OUTER_API_TOKEN')
 ];

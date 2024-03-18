@@ -35,10 +35,10 @@ class CurrencyRateController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.apilayer.com/fixer/latest?symbols=USD%2C%20AUD%2C%20GBP&base=EUR",
+            CURLOPT_URL => config('currency.API_URL'),
             CURLOPT_HTTPHEADER => array(
                 "Content-Type: text/plain",
-                "apikey: sFPGZuddQknkkLST8Cq2qbV7ydxMVTSb"
+                "apikey: " . config('currency.API_TOKEN')
             ),
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
